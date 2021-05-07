@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import ReactDOM from 'react-dom';
 import classes from "./Modal.module.css";
 
 const BackDrop = props => {
@@ -11,10 +12,12 @@ const ModalOverlay = props => {
     </div>
 }
 
+
+
 const Modal = props =>{
     return <Fragment>
-        <BackDrop />
-        <ModalOverlay />
+        {ReactDOM.createPortal(<BackDrop/>)}
+        {ReactDOM.createPortal(<ModalOverlay>{props.children}</ModalOverlay>)}
     </Fragment>
 }
 

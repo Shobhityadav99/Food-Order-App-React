@@ -5,8 +5,14 @@ const Cart = props => {
     .map(item => <li>{item.name}</li>)}</ul>
     return <div>
         {cartItems}
-        <div></div>
-        <div></div>
+        <div className={classes.total}>
+            <span>Total Amount</span>
+            <span>69.69</span>
+        </div>
+        <div className={classes.actions}>
+            <button className={classes['button--alt']}>Close</button>
+            <button className={classes.button}>Order</button>
+        </div>
     </div>
 }
 
